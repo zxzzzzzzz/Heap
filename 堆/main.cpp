@@ -1,7 +1,7 @@
 #include <iostream>
 #include "MaxHeap.h"
 #include "MinHeap.h"
-#include "IndexMaxHeap.h"//索引最大堆有问题
+//#include "IndexMaxHeap.h"//索引最大堆有问题
 #include "IndexMinHeap.h"
 #include "SortTestHelper.h"
 
@@ -19,17 +19,17 @@ void heapSortUsingMaxHeap(T arr[], int n){
 
 }
 
-template<typename T>
-void heapSortUsingIndexMaxHeap(T arr[], int n){
-
-    IndexMaxHeap<T> indexMaxheap = IndexMaxHeap<T>(n);
-    for( int i = 0 ; i < n ; i ++ )
-        indexMaxheap.insert(i, arr[i]);
-
-    for( int i = n-1 ; i >= 0 ; i-- )
-        arr[i] = indexMaxheap.extractMax();
-
-}
+//template<typename T>
+//void heapSortUsingIndexMaxHeap(T arr[], int n){
+//
+//    IndexMaxHeap<T> indexMaxheap = IndexMaxHeap<T>(n);
+//    for( int i = 0 ; i < n ; i ++ )
+//        indexMaxheap.insert(i, arr[i]);
+//
+//    for( int i = n-1 ; i >= 0 ; i-- )
+//        arr[i] = indexMaxheap.extractMax();
+//
+//}
 
 template<typename T>
 void heapSortUsingMinHeap(T arr[], int n){
@@ -65,7 +65,7 @@ int main() {
     int* arr4 = SortTestHelper::copyIntArray(arr1, n);
 
     SortTestHelper::testSort("Heap Sort Using Max Heap", heapSortUsingMaxHeap, arr1, n);
-    SortTestHelper::testSort("Heap Sort Using Index Max Heap", heapSortUsingIndexMaxHeap, arr2, n);
+    //SortTestHelper::testSort("Heap Sort Using Index Max Heap", heapSortUsingIndexMaxHeap, arr2, n);
     SortTestHelper::testSort("Heap Sort Using Min Heap", heapSortUsingMinHeap, arr3, n);
     SortTestHelper::testSort("Heap Sort Using Index Min Heap", heapSortUsingIndexMinHeap, arr4, n);
 
